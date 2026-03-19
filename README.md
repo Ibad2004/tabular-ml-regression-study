@@ -1,8 +1,28 @@
 # 📊 Regression Model Comparison
 
+A research-oriented machine learning project focused on analyzing regression models on tabular data using a structured experimental pipeline.
+
+---
+
+## 📄 Research Paper
+
+This project includes a research-style paper based on systematic experimentation and analysis.
+
+📥 **Download Paper:** [paper/paper.pdf](paper/paper.pdf)
+
+### 📊 Paper Highlights
+
+- Comparative analysis of multiple regression models  
+- Impact of preprocessing and feature engineering  
+- Feature selection and dimensionality reduction  
+- Evaluation of hyperparameter tuning  
+- Insights into model performance on tabular data  
+
+---
+
 ## 🎯 Objective
 
-The goal of this project is to systematically compare multiple regression models on tabular data and analyze how different machine learning techniques affect performance.
+The goal of this project is to systematically compare multiple regression models and analyze how different machine learning techniques affect performance.
 
 This project focuses on:
 
@@ -15,15 +35,24 @@ The emphasis is on **structured experimentation, model comparison, and analytica
 
 ---
 
-## ⚙️ Methodology
+## 🧠 Research Approach
 
-The project follows an **iterative experimental workflow**, similar to real-world machine learning research.
+This project follows a structured experimental workflow:
+
+
+Modify → Train → Evaluate → Analyze → Document
+
+
+This approach ensures:
+- Reproducibility  
+- Clear performance tracking  
+- Deeper understanding of model behavior  
 
 ---
 
-### 1️⃣ Data Cleaning & Preprocessing
+## ⚙️ Methodology
 
-Initial preprocessing includes:
+### 1️⃣ Data Cleaning & Preprocessing
 
 - Handling missing values  
 - Encoding categorical variables  
@@ -34,20 +63,19 @@ Initial preprocessing includes:
 
 ### 2️⃣ Baseline Model Training
 
-Baseline models are trained to establish initial performance benchmarks.
-
 Models used:
 
 - Linear Regression  
 - Decision Tree Regressor  
 - Random Forest Regressor  
 - Gradient Boosting Regressor  
+- Support Vector Regressor  
 
 ---
 
 ### 3️⃣ Model Evaluation
 
-Models are evaluated using standard regression metrics:
+Evaluation metrics:
 
 - **Mean Squared Error (MSE)**  
 - **Root Mean Squared Error (RMSE)**  
@@ -57,19 +85,15 @@ Models are evaluated using standard regression metrics:
 
 ### 📊 Visual Analysis
 
-The following visualizations are used:
-
-- Model comparison bar charts  
-- Feature importance plots (tree-based models)  
-- Residual plots (optional)  
-
-All observations and results are documented inside notebooks.
+- Model comparison charts  
+- Feature importance plots  
+- Residual analysis  
 
 ---
 
 ### 4️⃣ Feature Engineering
 
-New features were created using domain knowledge:
+Created features:
 
 - HouseAge  
 - RemodelAge  
@@ -79,48 +103,28 @@ New features were created using domain knowledge:
 - GarageAge  
 - TotalLivingArea  
 
-These features improved the model’s ability to capture real-world relationships.
-
 ---
 
 ### 5️⃣ Encoding & Feature Selection
 
-A mixed encoding strategy was applied:
+Encoding strategy:
 
 - Binary → Label Encoding  
 - Ordinal → Ordered Mapping  
 - Nominal → One-Hot Encoding  
 
-Feature selection was performed using **Random Forest feature importance**.
-
-Feature space reduction:
-
-
-253 → 50 features
-
+Feature selection:
+- Based on Random Forest importance  
+- Reduced features: **253 → 50**
 
 ---
 
 ### 6️⃣ Hyperparameter Tuning
 
-Hyperparameter tuning was performed using **RandomizedSearchCV** with cross-validation.
-
-Models tuned:
-
-- Random Forest Regressor  
-- Gradient Boosting Regressor  
-
----
-
-### 7️⃣ Iterative Experimentation
-
-Each experiment follows a research cycle:
-
-
-Modify → Train → Evaluate → Analyze → Document
-
-
-This allows systematic understanding of performance improvements.
+- Method: **RandomizedSearchCV**
+- Models tuned:
+  - Random Forest  
+  - Gradient Boosting  
 
 ---
 
@@ -129,12 +133,6 @@ This allows systematic understanding of performance improvements.
 - **Dataset:** House Prices (Kaggle)  
 - **Samples:** 1460  
 - **Target Variable:** SalePrice  
-
-Dataset stored in:
-
-
-data/
-
 
 ---
 
@@ -145,8 +143,9 @@ Regression-Comparison/
 
 data/ # Dataset
 notebooks/ # Experiment notebooks (01–06)
-models/ # Saved models (final_model, scaler, features)
-README.md # Project documentation
+models/ # Saved models
+paper/ # Research paper (PDF + LaTeX)
+README.md
 
 
 ---
@@ -165,26 +164,30 @@ README.md # Project documentation
 
 ---
 
-## 📈 Final Results
+## 📈 Results Summary
 
-- **Best Model:** Gradient Boosting Regressor  
-- **R² Score:** ~0.904 – 0.905  
-- **RMSE:** ~27000  
+| Stage | R² Score |
+|------|--------|
+| Baseline | ~0.89 |
+| Preprocessing | ~0.90 |
+| Feature Engineering | ~0.911 |
+| Feature Selection | ~0.905 |
+| Final Model | ~0.904 |
 
 ---
 
 ## 🔥 Key Insights
 
 - Feature engineering had the **largest impact on performance**  
-- Tree-based ensemble models perform best on tabular data  
-- Feature selection reduces dimensionality with minimal performance loss  
-- Hyperparameter tuning provides **limited improvement**  
+- Ensemble models (Gradient Boosting) performed best  
+- Feature selection reduced dimensionality with minimal loss  
+- Hyperparameter tuning provided **limited improvement**  
 
 ---
 
 ## 📌 Conclusion
 
-This project demonstrates a complete machine learning pipeline, progressing from baseline models to a fully optimized solution.
+This project demonstrates a complete machine learning pipeline from baseline models to an optimized solution.
 
 Key takeaways:
 
@@ -198,8 +201,8 @@ Key takeaways:
 
 - Classification model comparison  
 - Deep learning approaches  
-- Advanced feature engineering  
-- Research-oriented model optimization  
+- Graph Neural Networks (GNNs)  
+- Advanced optimization techniques  
 
 ---
 
@@ -212,5 +215,15 @@ Key takeaways:
 - Matplotlib / Seaborn  
 - Jupyter Notebook  
 - VS Code  
+
+---
+
+## ⭐ About This Project
+
+This project is part of a structured roadmap toward research-level machine learning, preparing for advanced topics such as:
+
+- Deep Learning  
+- Graph Neural Networks  
+- Optimization techniques  
 
 ---
