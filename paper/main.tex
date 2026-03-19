@@ -1,0 +1,287 @@
+\documentclass[conference]{IEEEtran}
+
+
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{xcolor}
+
+\begin{document}
+
+\title{A Comparative Study of Feature Engineering and Model Optimization Techniques for House Price Prediction}
+
+\author{
+\IEEEauthorblockN{Muhammad Ibad Ur Rahman}
+\IEEEauthorblockA{
+Department of Data Science\\
+DHA Suffa University\\
+Karachi, Pakistan\\
+rehmanibad17062004@gmail.com
+}
+}
+
+\maketitle
+
+\begin{abstract}
+This paper presents a structured experimental analysis of regression models for house price prediction using the Kaggle House Prices dataset. The study evaluates the impact of preprocessing, feature engineering, feature selection, and model tuning on predictive performance.
+
+Multiple regression models, including Linear Regression, Decision Trees, Random Forest, Gradient Boosting, and Support Vector Regression, are compared within a systematic pipeline. Experimental results show that feature engineering has the most significant impact on model performance, while hyperparameter tuning provides only marginal improvements.
+
+The best-performing model, based on Gradient Boosting, achieves an $R^2$ score of approximately 0.90. The findings highlight the importance of data representation and structured experimentation in tabular machine learning tasks.
+
+This work serves as a foundation for future research in deep learning, graph neural networks, and optimization techniques.
+\end{abstract}
+
+\begin{IEEEkeywords}
+Machine Learning, Regression, Feature Engineering, Gradient Boosting, Tabular Data, Model Optimization
+\end{IEEEkeywords}
+
+\section{Introduction}
+
+Predicting house prices is a fundamental problem in machine learning, particularly in the domain of structured tabular data. Accurate estimation of property values is important for real estate businesses, financial institutions, and urban planning.
+
+However, tabular datasets present several challenges, including missing values, mixed data types, high dimensionality, and complex feature interactions. Unlike image or text data, where deep learning models dominate, tabular data often requires careful preprocessing and feature engineering to achieve strong performance.
+
+In this work, we present a structured experimental study on the Kaggle House Prices dataset. The goal is not only to build an accurate predictive model but also to analyze the impact of different stages of the machine learning pipeline.
+
+The main contributions of this work are:
+
+\begin{itemize}
+\item A comparative analysis of multiple regression models on tabular data.
+\item Evaluation of preprocessing and feature engineering techniques.
+\item Analysis of feature selection and dimensionality reduction.
+\item Insights into the relative importance of feature engineering and model tuning.
+\end{itemize}
+
+This study provides a foundation for future work in more advanced areas such as deep learning and graph-based models.
+
+\section{Literature Review}
+
+House price prediction has been extensively studied in the field of machine learning, particularly using structured tabular datasets. Early approaches primarily relied on linear regression models due to their simplicity and interpretability \cite{hastie2009elements}. However, these models are limited in their ability to capture complex non-linear relationships present in real-world housing data.
+
+To address these limitations, tree-based models such as Decision Trees and Random Forests have been widely adopted \cite{breiman2001random}. These models are capable of modeling non-linear interactions and handling mixed data types without extensive preprocessing.
+
+Ensemble methods, especially Gradient Boosting, have further advanced performance in tabular prediction tasks \cite{friedman2001greedy}. This approach has been shown to achieve high predictive accuracy and is widely used in machine learning applications.
+
+Recent research highlights the critical role of feature engineering in improving model performance. Constructing meaningful features based on domain knowledge significantly enhances predictive capability \cite{domingos2012few}. In many cases, feature engineering contributes more to performance improvement than model complexity alone.
+
+Feature selection techniques are also commonly used to reduce dimensionality and improve computational efficiency. Methods based on feature importance help identify the most relevant features while eliminating redundant ones \cite{guyon2003introduction}.
+
+Hyperparameter tuning is another widely used technique to optimize model performance. Techniques such as randomized search and cross-validation are commonly applied \cite{bergstra2012random}. However, their impact is often smaller compared to preprocessing and feature engineering.
+
+Despite the availability of various models and techniques, there is a need for systematic experimentation to understand the relative importance of different stages in the machine learning pipeline. This work addresses this gap through a structured experimental analysis.
+
+\section{Methodology}
+
+This study follows a structured and research-oriented experimental workflow to evaluate the performance of multiple regression models on tabular data. The methodology is designed to systematically analyze the impact of different stages of the machine learning pipeline.
+
+\subsection{Dataset}
+
+The experiments are conducted using the House Prices dataset from Kaggle. The dataset contains 1460 samples with various numerical and categorical features describing residential properties. The target variable is the sale price of houses.
+
+\subsection{Data Preprocessing}
+
+Initial preprocessing steps include handling missing values, encoding categorical variables, and scaling numerical features. A combination of encoding techniques is used based on feature types, including label encoding, ordinal encoding, and one-hot encoding. The dataset is split into training and testing sets for evaluation.
+
+\subsection{Baseline Models}
+
+Baseline models are trained with minimal preprocessing to establish initial performance benchmarks. The following regression algorithms are evaluated:
+
+\begin{itemize}
+\item Linear Regression
+\item Decision Tree Regressor
+\item Random Forest Regressor
+\item Gradient Boosting Regressor
+\item Support Vector Regressor
+\end{itemize}
+
+\subsection{Feature Engineering}
+
+To improve model performance, several domain-inspired features are created, including:
+
+\begin{itemize}
+\item HouseAge
+\item RemodelAge
+\item TotalBathrooms
+\item TotalSF
+\item TotalPorchSF
+\item GarageAge
+\item TotalLivingArea
+\end{itemize}
+
+These features are designed to better capture relationships within the data and enhance predictive capability.
+
+\subsection{Feature Selection}
+
+Feature selection is performed using feature importance scores derived from Random Forest models. This reduces the feature space from over 250 features to approximately 50, improving computational efficiency while maintaining model performance.
+
+\subsection{Model Tuning}
+
+Hyperparameter tuning is conducted using RandomizedSearchCV with cross-validation. The tuning process focuses on ensemble models, particularly Random Forest and Gradient Boosting, to explore optimal parameter configurations.
+
+\subsection{Evaluation Metrics}
+
+Model performance is evaluated using standard regression metrics:
+
+\begin{itemize}
+\item Mean Squared Error (MSE)
+\item Root Mean Squared Error (RMSE)
+\item R-squared ($R^2$) score
+\end{itemize}
+
+\subsection{Experimental Workflow}
+
+The overall experimentation follows an iterative process:
+
+\begin{center}
+Modify $\rightarrow$ Train $\rightarrow$ Evaluate $\rightarrow$ Analyze $\rightarrow$ Document
+\end{center}
+
+This structured approach ensures reproducibility and enables systematic analysis of performance improvements across different stages.
+
+\section{Experiments and Results}
+
+This section presents the results of a series of structured experiments conducted to evaluate the performance of different regression models and to analyze the impact of various stages of the machine learning pipeline.
+
+\subsection{Baseline Performance}
+
+Initial experiments were conducted using minimal preprocessing to establish baseline performance. Multiple regression models were evaluated, including Linear Regression, Decision Tree, Random Forest, Gradient Boosting, and Support Vector Regression.
+
+Among these models, Gradient Boosting achieved the best performance with an $R^2$ score of approximately 0.89, outperforming other approaches. Linear models showed comparatively lower performance, indicating the presence of non-linear relationships in the dataset.
+
+\subsection{Impact of Preprocessing}
+
+Further improvements were achieved by applying systematic preprocessing techniques, including handling missing values, feature scaling, and improved encoding strategies.
+
+These enhancements resulted in an increase in model performance, with the best models achieving an $R^2$ score of approximately 0.90. This demonstrates the importance of proper data preparation in tabular machine learning tasks.
+
+\subsection{Effect of Feature Engineering}
+
+Feature engineering had the most significant impact on model performance. Newly created features, such as aggregated living area and age-related attributes, helped the models capture underlying patterns more effectively.
+
+As a result, the best-performing model achieved an $R^2$ score of approximately 0.911, representing the highest performance across all experiments.
+
+\subsection{Feature Selection Results}
+
+Feature selection was applied using Random Forest feature importance to reduce dimensionality. The number of features was reduced from over 250 to approximately 50.
+
+Despite this significant reduction, model performance remained competitive, with an $R^2$ score of approximately 0.905. This indicates that many original features were redundant and that a smaller subset of informative features is sufficient.
+
+\subsection{Hyperparameter Tuning}
+
+Hyperparameter tuning was performed using RandomizedSearchCV. While tuning improved model stability, it resulted in only marginal performance gains compared to earlier stages.
+
+This suggests that, for this dataset, improvements from feature engineering are more impactful than extensive hyperparameter optimization.
+
+\subsection{Final Model Performance}
+
+The final model pipeline, based on Gradient Boosting, achieved an $R^2$ score of approximately 0.904 and an RMSE of approximately 27000.
+
+This model represents a balance between performance and complexity, incorporating optimized preprocessing, feature engineering, and feature selection.
+
+\begin{table}[h]
+\centering
+\caption{Performance Comparison Across Experiment Stages}
+\begin{tabular}{|c|c|}
+\hline
+\textbf{Experiment Stage} & \textbf{R\textsuperscript{2} Score} \\
+\hline
+Baseline Models & 0.89 \\
+Preprocessing & 0.90 \\
+Feature Engineering & 0.911 \\
+Feature Selection & 0.905 \\
+Final Model & 0.904 \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Summary of Findings}
+
+The experiments highlight several key observations:
+
+\begin{itemize}
+\item Ensemble models outperform linear and simple tree-based models on tabular data.
+\item Feature engineering contributes the most to performance improvement.
+\item Preprocessing plays a critical role in stabilizing model performance.
+\item Feature selection effectively reduces dimensionality with minimal performance loss.
+\item Hyperparameter tuning provides limited additional benefit compared to earlier stages.
+\end{itemize}
+
+\section{Discussion}
+
+The experimental results provide several important insights into the behavior of machine learning models on structured tabular data.
+
+One of the key observations is that ensemble-based models, particularly Gradient Boosting and Random Forest, consistently outperform simpler models such as Linear Regression and Decision Trees. This can be attributed to their ability to capture complex non-linear relationships and interactions between features, which are common in real-world tabular datasets.
+
+Feature engineering emerged as the most influential factor in improving model performance. The creation of aggregated and domain-informed features significantly enhanced the model's ability to learn meaningful patterns. This highlights the importance of data representation and supports the idea that better features often lead to better models, even without increasing model complexity.
+
+The results also demonstrate that preprocessing plays a crucial role in stabilizing model performance. Proper handling of missing values and appropriate encoding of categorical variables ensured that models could effectively utilize the available data.
+
+Feature selection proved effective in reducing dimensionality without substantial loss in performance. By reducing the feature space from over 250 features to approximately 50, the model maintained comparable accuracy while becoming more computationally efficient. This suggests that many features in the original dataset were either redundant or less informative.
+
+In contrast, hyperparameter tuning provided only marginal improvements. While tuning helps refine model performance, its impact was limited compared to earlier stages such as feature engineering and preprocessing. This indicates that focusing on data quality and representation yields greater benefits than extensive parameter optimization.
+
+Another important factor is the size of the dataset. With only 1460 samples, the potential for significant performance gains is naturally limited. Larger datasets typically allow models to learn more complex patterns and generalize better.
+
+Overall, the findings emphasize that in tabular machine learning problems, careful preprocessing and feature engineering are more critical than model complexity or extensive tuning.
+
+\section{Conclusion}
+
+This study presented a structured and experimental analysis of regression models on a real-world tabular dataset. A complete machine learning pipeline was developed, starting from baseline models and progressively incorporating preprocessing, feature engineering, feature selection, and model tuning.
+
+The results demonstrate that ensemble models, particularly Gradient Boosting, achieve the best performance on tabular data. More importantly, feature engineering was identified as the most significant factor contributing to performance improvement, outperforming the impact of hyperparameter tuning.
+
+Additionally, feature selection proved effective in reducing dimensionality while maintaining strong predictive performance. These findings highlight the importance of data representation and structured experimentation in machine learning workflows.
+
+Overall, this work provides a solid foundation for understanding regression problems in tabular data and establishes a research-oriented approach to model development.
+
+\section{Future Work}
+
+This work serves as a stepping stone toward more advanced research areas. Future work will focus on extending this study in several directions:
+
+\begin{itemize}
+\item Exploring classification problems using a similar experimental framework.
+\item Investigating deep learning approaches for structured and unstructured data.
+\item Studying Graph Neural Networks (GNNs) for modeling relational data.
+\item Applying advanced optimization techniques to improve model performance.
+\item Experimenting with larger and more complex datasets.
+\end{itemize}
+
+These directions aim to transition from classical machine learning methods to more advanced and research-oriented approaches suitable for final year project development.
+
+
+\begin{thebibliography}{00}
+
+\bibitem{hastie2009elements}
+T. Hastie, R. Tibshirani, and J. Friedman,
+\textit{The Elements of Statistical Learning},
+New York, NY, USA: Springer, 2009.
+
+\bibitem{breiman2001random}
+L. Breiman,
+``Random Forests,''
+\textit{Machine Learning}, vol. 45, no. 1, pp. 5--32, 2001.
+
+\bibitem{friedman2001greedy}
+J. H. Friedman,
+``Greedy Function Approximation: A Gradient Boosting Machine,''
+\textit{Annals of Statistics}, vol. 29, no. 5, pp. 1189--1232, 2001.
+
+\bibitem{domingos2012few}
+P. Domingos,
+``A Few Useful Things to Know About Machine Learning,''
+\textit{Communications of the ACM}, vol. 55, no. 10, pp. 78--87, 2012.
+
+\bibitem{guyon2003introduction}
+I. Guyon and A. Elisseeff,
+``An Introduction to Variable and Feature Selection,''
+\textit{Journal of Machine Learning Research}, vol. 3, pp. 1157--1182, 2003.
+
+\bibitem{bergstra2012random}
+J. Bergstra and Y. Bengio,
+``Random Search for Hyper-Parameter Optimization,''
+\textit{Journal of Machine Learning Research}, vol. 13, pp. 281--305, 2012.
+
+\end{thebibliography}
+
+\end{document}
